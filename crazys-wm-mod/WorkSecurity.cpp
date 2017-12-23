@@ -160,16 +160,20 @@ bool cJobManager::WorkSecurity(sGirl* girl, sBrothel* brothel, bool Day0Night1, 
 		int l = 0;
 		switch (g_Dice % 4)		// `J` just roll for the 4 sex options and flash only if sex is restricted
 		{
-		case 1:	if (!brothel->m_RestrictOral)	{ l = 10;	imagetype = IMGTYPE_ORAL;	ss << "She sucked them off";	break; }
-		case 2:	if (!brothel->m_RestrictTitty)	{ l = 7;	imagetype = IMGTYPE_TITTY;	ss << "She used her tits to get them off";	break; }
-		case 3:	if (!brothel->m_RestrictHand)	{ l = 6;	imagetype = IMGTYPE_HAND;	ss << "She jerked them off";	break; }
-		case 4:	if (!brothel->m_RestrictFoot)	{ l = 4;	imagetype = IMGTYPE_FOOT;	ss << "She used her feet to get them off";	break; }
-		default:/*                         */	{ l = 2;	imagetype = IMGTYPE_STRIP;	ss << "She flashed them";	break; }
-		}
+		case 1:	if (!brothel->m_RestrictOral)	{ l = 10;	imagetype = IMGTYPE_ORAL;	ss << "She emptied their balls with her mouth";	break; }
+		case 2:	if (!brothel->m_RestrictTitty)	{ l = 7;	imagetype = IMGTYPE_TITTY;	ss << "She at first offered to suck them but seeing it wasn’t enough. Then revealed her prominent chest and extracted all their male essence";	break; }
+		case 3:	if (!brothel->m_RestrictHand)	{ l = 6;	imagetype = IMGTYPE_HAND;	ss << "She jerked them off while whispering quotes of an erotic novel";	break; }
+		case 4:	if (!brothel->m_RestrictFoot)	{ l = 4;	imagetype = IMGTYPE_FOOT;	ss << "She used her feet while showing a lustful smile until they could no longer suppress the little humiliation";	break; }
+		default:/*                         */	{ l = 2;	imagetype = IMGTYPE_STRIP;	ss << "She let them masturbate while seeing her exposed vagina";	break; }
+		}									
 		ss << ".\n \n";
 		g_Girls.UpdateStatTemp(girl, STAT_LIBIDO, -l, true);
 	}
-
+	// i don't know much about programing so i'll leave this text here to not mess up the code,	also my fisrt languaje is not english so i'm always forced to check my text with google. Yes i'm really handicapped in both programation and redacction as i cant use phrases or common sayings.
+	//tried to create an individual scenario but the tacit of being 1 or multiple males limited me. This is a small change because i feel the initial text was a bit blunt.
+	// if posible please create the following "IF", this will include an action for your player:
+	//IF PClove: +90 Libido: +70	trigger chance: i dont know
+	// ss << "Doing a check routine with some doctors, you see " << girlName << " walking strangely around. Dismissing the others and following her, soon you understood she was simply horny. Checking today schedule, you called an assistant and instructed to cancel the next meeting. With time in hands, soon the face of " << girlName << " lost in pleasure made your day more confortable";	break; }
 	if (SecLev < 10) SecLev = 10;
 	brothel->m_SecurityLevel += int(SecLev);
 
