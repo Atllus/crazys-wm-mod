@@ -267,12 +267,16 @@ bool cJobManager::WorkNurse(sGirl* girl, sBrothel* brothel, bool Day0Night1, str
 	{
 		tips += 25;
 		ss << "Stunned by her beauty a customer left her a great tip.\n";
+		// add or replace
+		//ss << "Trying to get a chance to hook up with such beauty, a middle age man left her a good tip, pretending it wasn’t’ much.\n";
 	}
 
 	if (girl->has_trait( "Clumsy") && g_Dice.percent(20))
 	{
 		wages -= 15;
 		ss << "Her clumsy nature caused her to spill some medicine everywhere.\n";
+		// add or replace
+		//ss << "Distracted by the patients TV,  " << girlName << " messed the medicine the ratios while administering medication. One of her coworkers had to fix the mistake and report the issue as it wasn’t the first time happening.\n";
 	}
 
 	if (girl->has_trait( "Pessimist") && g_Dice.percent(5))
@@ -318,11 +322,21 @@ bool cJobManager::WorkNurse(sGirl* girl, sBrothel* brothel, bool Day0Night1, str
 			sex = true;
 			enjoy += 1;
 			ss << "When giving a sponge bath to one of her male patients she couldn't look away from his enormous manhood. The man took advantage and fucked her brains out!\n";
+			// the following would be with randomizer alongside with the text adobe. I saw some examples in other cpp files but i cant read how it execute correctly.
+			//ss << "When " << girlName << " was bending down to organize some material in a small table, one of her patient  had a clear view of her panties, unable to resist the temptation he furtively went behind her while exposing his dick and with a quick movement,  " << girlName << " was penetrated. Due to her unfulfilled desires she got turned on and spent some time milking him. \n";
+			//ss << "While taking a break,” << girlName << " found a horny patient who was masturbating to some porn video. Watching him she got immersed in her own disillusion and didn’t notice when she was put against a windows, being fucked savagely by the guy who was speaking sweet nothingness to maintain her submissive. \n";
+			//ss << "Attending a recognized city playboy in a private waiting room, " << girlName << " was successfully seduced. On her own volition, she unzipped his pants and guided his cock inside her. Fortunately no one appeared in the scene as both enjoyed some rounds. \n";
 		}
 		else
 		{
 			ss << "When giving a sponge bath to one of her male patients she couldn't look away from his enormous manhood. But she wasn't in the mood so she left.\n";
 		}
+		//These 4 lines are for an "if" with similar paramethers as adobe, also a randomizer to pick any of them.
+		//titty = true;
+		//ss << "Walking aimlessly, one sly patient found " << girlName << " sleeping peacefully on a bed. Checking no one was around, he locked the room and evaluated his luck, to not push it farther, he went for a tittyfuck with those well breed masses. After waking up, " << girlName << " noticed the scent and her exposed breast. Pleasing herself for some minutes, she thought of using the room more frequently. \n";
+		//ss << "Taking a bath with a quiet elder, " << girlName << " was shocked when she saw his vigorous manhood. Touching it with a finger, the old man who usually was timid shivered pleasantly. Thinking it was cute, she trapped his dick between her breasts while checking his innocent expression. \n";
+		//ss << "Working with a vibrator hidden in her underneath, " << girlName << " was unable to resist her lust and went to a near sleeping patient, giving him a tittyfuck, the man woke up. Seeing the unexpected scene, he grabbed her breast and moved them roughly until the end. Splashing her face with cum, " << girlName << " licked all she could in a sensual manner. The patient could no stay awake due to his illness and rested with a smirk, knowing that one of the hospital seven mysteries was true. \n";
+		//ss << "Seeing the depressed face of some her patients when they received their meals, " << girlName << " made a call, telling them that the one who enjoyed the food more could get a special treatment. In a deductive manner, she unbuttoned part of her top giving a glimpse of her bra while swinging her body. The destructive action made all the present fired up and competed with all their might. The winner latter got a great tittyfuck while being looked with envy by others. \n";
 	}
 
 	if (girl->has_trait( "Lesbian") && girl->has_trait( "Aggressive") &&
