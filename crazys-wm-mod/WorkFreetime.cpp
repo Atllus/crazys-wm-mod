@@ -316,6 +316,16 @@ bool cJobManager::WorkFreetime(sGirl* girl, sBrothel* brothel, bool Day0Night1, 
 			if (HateLove >= 80 && g_Dice.percent(10))//loves you
 			{
 				ss << "She invites you to join her in the tub.\n";//will get around to adding sex options later
+				//i'll leave some random text here and there, my main objetive in Freetime.cpp is just adding the PC as a reasonable man who can love their girls be lovers or not. I know this game is called whore master, but still doens't feel right to make the PC a statue throught the game. 
+				//initial text separate in 2 branches:
+				//ss << "Accepting the offer, both relaxed for a while. Recovering energy from your exhausting day, " << girlName << " started humming a popular idol melody that the studio approved some time ago. Being a little playful, you tickled her until she moved incorrectly, making your hand reach her ripped blossoms.\n";
+					// ED1 following lines go with ecchi pic
+					//ss << "Tired, you massaged her erogenous area until she came, sadly your little member was used too much today.\n";
+					// ED2 following line go with sex pic
+					//ss << "Tired, you massaged her giving your best. " << girlName << " noticed your lack of enthusiasm, asking the reasons she reached your manhood. Getting shocked of your poor state, she tried reviving it with her mouth unsuccessfully, then having an idea, " << girlName << " stood up and winked, saying she had the solution. Minutes later in the bedroom she came with a homemade energizer. Feeling the effectiveness the night ended with her total defeat under your hungry son. To her fortune she was not aware of all the acts you committed on her body while sleeping.\n";
+					// i'll stop here because i feel is not posible to decide 2 diferente pictures under 1 if code, i have this unsolved trouble with the script editor.
+					// ED1a in case Ecchi line cant be added
+					////ss << "Looking at you sheepishly, your experienced hand managed to make her moan, and even more when she felt your dick grinding her without pause. Somehow while being connected; both managed to reach her bedroom, where the rest took place.\n";
 			}
 			else if (girl->libido() > 70 || (girl->has_trait( "Nymphomaniac") && girl->libido() > 30))
 			{
@@ -775,6 +785,11 @@ bool cJobManager::WorkFreetime(sGirl* girl, sBrothel* brothel, bool Day0Night1, 
 			if (HateLove >= 80 && g_Dice.percent(10))//loves you
 			{
 				ss << "She invites you to eat with her.\n";//FIXME add in different things here
+				//extra if to revaluate her cooking skills again:	bad/neutral/good
+				//ss << "The taste was bad, but you endure, deciding to teach her personally one of your dish fortes.\n";
+				//ss << "While it was not the best, the troughs were transmitted, exchanging some tips with the other girls present, both had a pleasant time learning.\n";
+				//ss << "The exquisite flavor of these delicacies made you evaluate to open a formal restaurant, but soon discarded that idea thinking it was no good to share such wonders.\n";
+
 			}
 			g_Girls.UpdateSkill(girl, SKILL_COOKING, 2);
 		}
@@ -820,6 +835,16 @@ bool cJobManager::WorkFreetime(sGirl* girl, sBrothel* brothel, bool Day0Night1, 
 			ss << girlName << " wandered around the shops trying things on that she knew she could not afford. Though she wasted the shop girl's time, ";
 			if (hap > 0) ss << " she enjoyed herself a " << (hap > 3 ? "bit." : "lot.");
 			else ss << " she was sad because she didn't find what she liked for a price she could afford.";
+			//maybe a initial if here: (text base)
+			//ss << girlName << "  was in a good mood and went with her friends to the city center. Chatting among them while shopping, they soon noticed a shadow tailing them. Getting ready to act, after turning around a corner, " << girlName << " attacked \n";
+			//if PClove -60
+				//ss << "you. Being in the wrong end of a psychology torture, the group managed to make you pay their expenses as an apology.\n";
+				//if PClove +60
+					//ss << "you. Caught red handed their female instinct detected our lies as you tried to be cool, your reaction after being exposed caused the laugh of the group. Redirecting the conversation to avoid sensible topics, you managed to enter the group. Eventually only, " << girlName << " was left alone with you. Making an improvised date, the mood was too sweet to propose a sex end , " << girlName << " also though so. To appease your needs she promised to let her be your sex tool another day, then with a deep French kiss as good bye, she entered her room.\n";
+					//if has power +75
+						//ss << "a stranger, being to weak as an enemy. In a matter of seconds, an officer took the guy away to interrogate. Reassuming the previous mood the girls returned home after spending part of their money, everyone got something being bought or gifted.\n";
+						//Else
+						//ss << "a stranger, yelling he was returning something, he barely avoided being hit. Showing an item, one of her friends raised her voice acknowledging her purse. Apologizing for the inconvenience, eventually the previous mood returned in the group and returned home after spending part of their money, everyone got something being bought or gifted.\n";
 		}
 #endif
 		break;	// end FT_WindowShopping
